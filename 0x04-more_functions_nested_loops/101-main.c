@@ -1,13 +1,12 @@
 #include "main.h"
 
 /**
- * main - check the code
+ *   main - check the code
  *
- * Return: Always 0.
+ *   Return: Always 0.
  */
 int main(void)
 {
-	int print_numbers;
     print_number(98);
     _putchar('\n');
     print_number(402);
