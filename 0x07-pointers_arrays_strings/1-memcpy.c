@@ -4,7 +4,7 @@
  * _memcpy - function that copies memory area
  * @dest: the address of memory to print
  * @src: second value
- * @n: thirth value
+ * @n: third value
  *
  * Return: char with result of memset
  */
