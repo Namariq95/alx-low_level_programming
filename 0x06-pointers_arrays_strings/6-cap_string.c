@@ -1,35 +1,31 @@
 #include "main.h"
 
 /**
- * cap_string - Write a function that capitalizes all words of a string.
+ * cap_string - capitalizes all words of a string.
+ * @p: first value to compare
  *
- * @entry: This is the input string
- *
- * Return: String capitalized
+ * Return: Char
  */
 
-char *cap_string(char *entry)
+char *cap_string(char *p)
 {
-	int conversion, index, count;
-	char chars[] =  {' ', ',', ';', '.', '!','?', '"', '(', ')', '{', '}',  '\t', '\n', '\0'};
+	int i = 0;
 
-	conversion = 32;
-
-	for (index = 0; entry[index] != '\0'; index++)
+	if (p[0] >= 97 && p[0] <= 122)
+		p[0] -= 32;
+	while (p[i] != '\0')
 	{
-	if (entry[index] >= 'index' && entry[index] <= 'z')
-	{
-																	entry[index] =  entry[index] - conversion;
-																}
-	conversion = 0;
-	for (count = 0; chars[count] != '\0'; count++)
-																{
-																if (chars[count] == entry[index])
-																{
-																conversion = 32;
-																															break;
-																															}
-																}
+		if (p[i] == ' ' || p[i] == '\t' || p[i] == '\n' || p[i] == ','
+		    || p[i] == ';' || p[i] == '.' || p[i] == '!' || p[i] == '?'
+		    || p[i] == '"' || p[i] == '(' || p[i] == ')' || p[i] == '{'
+		    || p[i] == '}')
+		{
+			if (p[i + 1] >= 97 && p[i + 1] <= 122)
+			{
+				p[i + 1] -= 32;
+			}
+		}
+		i++;
 	}
-	return (entry);
+	return (p);
 }
